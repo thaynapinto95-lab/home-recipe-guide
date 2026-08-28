@@ -45,44 +45,63 @@ function CTA({ nota = true }: { nota?: boolean }) {
 function Pagina() {
   return (
     <main>
+      <SocialProofToast />
+
       {/* HERÓI */}
-      <header className="relative overflow-hidden bg-petroleo">
+      <header className="relative overflow-hidden bg-hero">
         <img
           src={heroImg}
-          alt="Mesa de cozinha com beterraba, laranjas, aveia e ervas frescas"
+          alt=""
+          aria-hidden="true"
           width={1600}
           height={1104}
-          className="absolute inset-0 h-full w-full object-cover opacity-25"
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.12]"
         />
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:py-24 md:grid-cols-[1.15fr_1fr] md:items-center">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 25% 20%, rgba(255,255,255,0.95), rgba(250,246,240,0.75))",
+          }}
+        />
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:py-24 md:grid-cols-[1.15fr_1fr] md:items-center">
           <div>
             <span className="selo">Receitas da roça · edição 2026</span>
-            <h1 className="mt-6 text-4xl text-creme sm:text-6xl">
-              Abra o livro, escolha a parte do corpo e encontre a receita
+            <h1 className="mt-6 text-[2rem] leading-tight sm:text-5xl">
+              Conheça as 50 Receitas Naturais da Roça que Ajudam a{" "}
+              <span className="text-terra">Desinflamar o Corpo</span>, Amenizar as Dores e Devolver
+              a Vitalidade de Milhares de Brasileiros
             </h1>
-            <p className="mt-6 max-w-xl text-xl text-creme/85">
-              50 receitas naturais, com foto, quantidade exata, passo a passo e cuidados — feitas
-              com ingredientes de feira que você reconhece. Organizadas por coração, intestino,
-              ossos, músculos e saciedade.
+            <p className="mt-6 max-w-xl text-xl text-muted-foreground">
+              50 preparos com ingredientes simples da feira do seu bairro — chás, caldos, compressas
+              e sucos organizados por parte do corpo. Sem remédios caros, sem suplementos importados
+              e do jeito simples que o interior do Brasil sempre fez.
             </p>
             <div className="mt-9">
-              <a href="#comprar" className="btn-comprar btn-comprar-hover w-full sm:w-auto">
-                Quero as 50 receitas organizadas
+              <a href="#comprar" className="btn-verde w-full sm:w-auto">
+                Quero as 50 receitas por R$ 29,90
               </a>
-              <p className="mt-3 text-base text-creme/70">
-                PDF para celular, tablet e computador · acesso imediato
+              <p className="mt-3 text-base text-muted-foreground">
+                🔒 Compra segura · acesso imediato · 7 dias de garantia
               </p>
             </div>
           </div>
-          <div className="mx-auto w-64 sm:w-80">
-            <img
-              src={capa.url}
-              alt="Capa do e-book 50 Receitas Naturais de Alto Impacto"
-              className="w-full border-4 border-creme shadow-[0_40px_70px_-30px_rgba(0,0,0,0.8)]"
-            />
+
+          <div className="mx-auto w-full max-w-sm">
+            <div className="relative rounded-[1.6rem] border-[12px] border-petroleo bg-petroleo shadow-[0_34px_60px_-26px_rgba(38,70,83,0.6)]">
+              <img
+                src={capa.url}
+                alt="Capa do e-book 50 Receitas Naturais de Alto Impacto"
+                className="livro-3d w-full"
+              />
+            </div>
+            <div className="mx-auto -mt-4 w-fit rounded-full border border-border bg-card px-4 py-2 text-sm font-bold text-petroleo shadow-[0_14px_30px_-18px_rgba(38,70,83,0.6)]">
+              📖 Formato PDF Digital · Leitura em qualquer tela
+            </div>
           </div>
         </div>
       </header>
+
 
       {/* PROBLEMA */}
       <section className="bg-background py-20">
