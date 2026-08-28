@@ -298,7 +298,9 @@ function Pagina() {
                 ["E-book completo", "50 receitas com foto, ingredientes, passo a passo, como consumir, o que a ciência diz e cuidados."],
                 ["Mapa visual do corpo", "A ilustração que leva você da região do corpo direto ao capítulo certo."],
                 ["Sumário por necessidade", "Encontre pela ajuda que você procura, não pelo nome da receita."],
-                ["Capítulo de trocas inteligentes", "Substitutos caseiros para o que hoje você compra pronto."],
+                ["Bônus 01 · Chás de Emergência da Roça", "As infusões para a hora do aperto — grátis."],
+                ["Bônus 02 · Tabela de Trocas Inteligentes", "O que sai do carrinho e o que entra no lugar — grátis."],
+                ["Bônus 03 · Protocolo Matinal de Desinflamação", "A sequência dos primeiros 30 minutos do dia — grátis."],
                 ["Leitura em qualquer tela", "PDF para celular, tablet e computador — e imprimível para deixar na cozinha."],
               ].map(([t, d]) => (
                 <li key={t} className="border-b border-border pb-4 last:border-0 last:pb-0">
@@ -307,18 +309,42 @@ function Pagina() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-col items-center gap-4 border-t border-border pt-8">
-              <CTA />
+
+            <div className="mt-8 border-t border-border pt-8 text-center">
+              <p className="text-lg text-muted-foreground">
+                Valor de tudo junto:{" "}
+                <span className="font-bold text-terra line-through">R$ 197,00</span>
+              </p>
+              <p className="mt-1 text-lg font-bold text-petroleo">Hoje, nesta página:</p>
+              <p className="mt-2 font-serif text-6xl text-verde">R$ 29,90</p>
+              <p className="mt-1 text-lg text-muted-foreground">ou 12x de R$ 3,00 no cartão</p>
+
+              <div className="mt-7 flex flex-col items-center gap-3">
+                <a href="#comprar" className="btn-verde w-full sm:w-auto">
+                  Quero as 50 receitas + os 3 bônus
+                </a>
+                <p className="text-base text-muted-foreground">
+                  Acesso digital imediato · pagamento único
+                </p>
+              </div>
+
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-border pt-6 text-sm font-bold text-muted-foreground">
+                <span>🔒 Compra 100% segura</span>
+                <span>💳 Pix e cartão</span>
+                <span>🛡️ Garantia de 7 dias</span>
+                <span>⚡ Entrega imediata</span>
+              </div>
             </div>
           </div>
 
-          <div className="mt-8 border-2 border-dashed border-terra bg-creme p-7 text-left">
-            <h3 className="text-2xl">Garantia de 7 dias</h3>
+          <div className="mt-8 border-2 border-dashed border-verde bg-creme p-7 text-left">
+            <h3 className="text-2xl">Garantia de 7 dias incondicional</h3>
             <p className="mt-2 text-lg text-muted-foreground">
               Leia com calma. Se em 7 dias você achar que o livro não é para você, é só pedir o
               reembolso — devolvemos o valor integral, sem interrogatório.
             </p>
           </div>
+
         </div>
       </section>
 
