@@ -32,12 +32,12 @@ export const Route = createFileRoute("/")({
 function CTA({ nota = true }: { nota?: boolean }) {
   return (
     <div className="flex flex-col items-start gap-3">
-      <a href="#comprar" className="btn-comprar btn-comprar-hover w-full sm:w-auto">
-        Quero as 50 receitas organizadas
+      <a href="#comprar" className="btn-verde w-full sm:w-auto">
+        Quero as 50 receitas por R$ 29,90
       </a>
       {nota && (
         <p className="text-base text-muted-foreground">
-          Acesso digital imediato · 7 dias de garantia
+          🔒 Compra segura · acesso imediato · 7 dias de garantia
         </p>
       )}
     </div>
