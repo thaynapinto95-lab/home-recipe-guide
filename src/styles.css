@@ -35,6 +35,9 @@
   --color-dourado: var(--dourado);
   --color-creme: var(--creme);
   --color-bege: var(--bege);
+  --color-verde: var(--verde);
+  --color-hero: var(--hero);
+
   --font-serif: "Bitter", Georgia, serif;
   --font-sans: "Source Sans 3", system-ui, sans-serif;
 }
