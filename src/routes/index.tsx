@@ -90,14 +90,14 @@ function Pagina() {
           </div>
 
           <div className="mx-auto w-full max-w-sm">
-            <div className="relative rounded-[1.6rem] border-[12px] border-petroleo bg-petroleo shadow-[0_34px_60px_-26px_rgba(38,70,83,0.6)]">
+            <div className="relative rounded-[1.6rem] border-[12px] border-petroleo bg-petroleo p-1 shadow-[0_34px_60px_-26px_rgba(38,70,83,0.6)]">
               <img
                 src={capa.url}
                 alt="Capa do e-book 50 Receitas Naturais de Alto Impacto"
                 className="livro-3d w-full"
               />
             </div>
-            <div className="mx-auto -mt-4 w-fit rounded-full border border-border bg-card px-4 py-2 text-sm font-bold text-petroleo shadow-[0_14px_30px_-18px_rgba(38,70,83,0.6)]">
+            <div className="relative z-10 mx-auto mt-8 w-fit rounded-full border border-border bg-card px-4 py-2 text-sm font-bold text-petroleo shadow-[0_14px_30px_-18px_rgba(38,70,83,0.6)]">
               📖 Formato PDF Digital · Leitura em qualquer tela
             </div>
           </div>
