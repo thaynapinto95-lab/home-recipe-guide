@@ -4,7 +4,7 @@ import mapaCorpo from "@/assets/mapa_corpo.png.asset.json";
 
 export function MapaCorpo() {
   const [ativo, setAtivo] = useState<string>("coracao");
-  const atual = regioes.find((r) => r.id === ativo) ?? regioes[1];
+  const atual = regioes.find((r) => r.id === ativo) ?? regioes[1]!;
 
   return (
     <section id="mapa" className="bg-petroleo/[0.04] py-20">
