@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapaCorpo } from "@/components/MapaCorpo";
 import { Mockups } from "@/components/Mockups";
+import { Bonus } from "@/components/Bonus";
+import { SocialProofToast } from "@/components/SocialProofToast";
 import { capitulos, faq } from "@/lib/ebook-data";
 import heroImg from "@/assets/hero-cozinha.jpg";
 import capa from "@/assets/capa-01.png.asset.json";
@@ -180,6 +182,8 @@ function Pagina() {
       </section>
 
       <Mockups />
+
+      <Bonus />
 
       {/* PARA QUEM É */}
       <section className="bg-background py-20">
