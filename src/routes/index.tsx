@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MapaCorpo } from "@/components/MapaCorpo";
 import { Mockups } from "@/components/Mockups";
+import { Bonus } from "@/components/Bonus";
+import { SocialProofToast } from "@/components/SocialProofToast";
 import { capitulos, faq } from "@/lib/ebook-data";
 import heroImg from "@/assets/hero-cozinha.jpg";
 import capa from "@/assets/capa-01.png.asset.json";
@@ -30,12 +32,12 @@ export const Route = createFileRoute("/")({
 function CTA({ nota = true }: { nota?: boolean }) {
   return (
     <div className="flex flex-col items-start gap-3">
-      <a href="#comprar" className="btn-comprar btn-comprar-hover w-full sm:w-auto">
-        Quero as 50 receitas organizadas
+      <a href="#comprar" className="btn-verde w-full sm:w-auto">
+        Quero as 50 receitas por R$ 29,90
       </a>
       {nota && (
         <p className="text-base text-muted-foreground">
-          Acesso digital imediato · 7 dias de garantia
+          🔒 Compra segura · acesso imediato · 7 dias de garantia
         </p>
       )}
     </div>
@@ -45,44 +47,63 @@ function CTA({ nota = true }: { nota?: boolean }) {
 function Pagina() {
   return (
     <main>
+      <SocialProofToast />
+
       {/* HERÓI */}
-      <header className="relative overflow-hidden bg-petroleo">
+      <header className="relative overflow-hidden bg-hero">
         <img
           src={heroImg}
-          alt="Mesa de cozinha com beterraba, laranjas, aveia e ervas frescas"
+          alt=""
+          aria-hidden="true"
           width={1600}
           height={1104}
-          className="absolute inset-0 h-full w-full object-cover opacity-25"
+          className="absolute inset-0 h-full w-full object-cover opacity-[0.12]"
         />
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:py-24 md:grid-cols-[1.15fr_1fr] md:items-center">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at 25% 20%, rgba(255,255,255,0.95), rgba(250,246,240,0.75))",
+          }}
+        />
+        <div className="relative mx-auto grid max-w-6xl gap-12 px-5 py-16 sm:py-24 md:grid-cols-[1.15fr_1fr] md:items-center">
           <div>
             <span className="selo">Receitas da roça · edição 2026</span>
-            <h1 className="mt-6 text-4xl text-creme sm:text-6xl">
-              Abra o livro, escolha a parte do corpo e encontre a receita
+            <h1 className="mt-6 text-[2rem] leading-tight sm:text-5xl">
+              Conheça as 50 Receitas Naturais da Roça que Ajudam a{" "}
+              <span className="text-terra">Desinflamar o Corpo</span>, Amenizar as Dores e Devolver
+              a Vitalidade de Milhares de Brasileiros
             </h1>
-            <p className="mt-6 max-w-xl text-xl text-creme/85">
-              50 receitas naturais, com foto, quantidade exata, passo a passo e cuidados — feitas
-              com ingredientes de feira que você reconhece. Organizadas por coração, intestino,
-              ossos, músculos e saciedade.
+            <p className="mt-6 max-w-xl text-xl text-muted-foreground">
+              50 preparos com ingredientes simples da feira do seu bairro — chás, caldos, compressas
+              e sucos organizados por parte do corpo. Sem remédios caros, sem suplementos importados
+              e do jeito simples que o interior do Brasil sempre fez.
             </p>
             <div className="mt-9">
-              <a href="#comprar" className="btn-comprar btn-comprar-hover w-full sm:w-auto">
-                Quero as 50 receitas organizadas
+              <a href="#comprar" className="btn-verde w-full sm:w-auto">
+                Quero as 50 receitas por R$ 29,90
               </a>
-              <p className="mt-3 text-base text-creme/70">
-                PDF para celular, tablet e computador · acesso imediato
+              <p className="mt-3 text-base text-muted-foreground">
+                🔒 Compra segura · acesso imediato · 7 dias de garantia
               </p>
             </div>
           </div>
-          <div className="mx-auto w-64 sm:w-80">
-            <img
-              src={capa.url}
-              alt="Capa do e-book 50 Receitas Naturais de Alto Impacto"
-              className="w-full border-4 border-creme shadow-[0_40px_70px_-30px_rgba(0,0,0,0.8)]"
-            />
+
+          <div className="mx-auto w-full max-w-sm">
+            <div className="relative rounded-[1.6rem] border-[12px] border-petroleo bg-petroleo p-1 shadow-[0_34px_60px_-26px_rgba(38,70,83,0.6)]">
+              <img
+                src={capa.url}
+                alt="Capa do e-book 50 Receitas Naturais de Alto Impacto"
+                className="livro-3d w-full"
+              />
+            </div>
+            <div className="relative z-10 mx-auto mt-8 w-fit rounded-full border border-border bg-card px-4 py-2 text-sm font-bold text-petroleo shadow-[0_14px_30px_-18px_rgba(38,70,83,0.6)]">
+              📖 Formato PDF Digital · Leitura em qualquer tela
+            </div>
           </div>
         </div>
       </header>
+
 
       {/* PROBLEMA */}
       <section className="bg-background py-20">
@@ -161,6 +182,8 @@ function Pagina() {
       </section>
 
       <Mockups />
+
+      <Bonus />
 
       {/* PARA QUEM É */}
       <section className="bg-background py-20">
@@ -275,7 +298,9 @@ function Pagina() {
                 ["E-book completo", "50 receitas com foto, ingredientes, passo a passo, como consumir, o que a ciência diz e cuidados."],
                 ["Mapa visual do corpo", "A ilustração que leva você da região do corpo direto ao capítulo certo."],
                 ["Sumário por necessidade", "Encontre pela ajuda que você procura, não pelo nome da receita."],
-                ["Capítulo de trocas inteligentes", "Substitutos caseiros para o que hoje você compra pronto."],
+                ["Bônus 01 · Chás de Emergência da Roça", "As infusões para a hora do aperto — grátis."],
+                ["Bônus 02 · Tabela de Trocas Inteligentes", "O que sai do carrinho e o que entra no lugar — grátis."],
+                ["Bônus 03 · Protocolo Matinal de Desinflamação", "A sequência dos primeiros 30 minutos do dia — grátis."],
                 ["Leitura em qualquer tela", "PDF para celular, tablet e computador — e imprimível para deixar na cozinha."],
               ].map(([t, d]) => (
                 <li key={t} className="border-b border-border pb-4 last:border-0 last:pb-0">
@@ -284,18 +309,42 @@ function Pagina() {
                 </li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-col items-center gap-4 border-t border-border pt-8">
-              <CTA />
+
+            <div className="mt-8 border-t border-border pt-8 text-center">
+              <p className="text-lg text-muted-foreground">
+                Valor de tudo junto:{" "}
+                <span className="font-bold text-terra line-through">R$ 197,00</span>
+              </p>
+              <p className="mt-1 text-lg font-bold text-petroleo">Hoje, nesta página:</p>
+              <p className="mt-2 font-serif text-6xl text-verde">R$ 29,90</p>
+              <p className="mt-1 text-lg text-muted-foreground">ou 12x de R$ 3,00 no cartão</p>
+
+              <div className="mt-7 flex flex-col items-center gap-3">
+                <a href="#comprar" className="btn-verde w-full sm:w-auto">
+                  Quero as 50 receitas + os 3 bônus
+                </a>
+                <p className="text-base text-muted-foreground">
+                  Acesso digital imediato · pagamento único
+                </p>
+              </div>
+
+              <div className="mt-7 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 border-t border-border pt-6 text-sm font-bold text-muted-foreground">
+                <span>🔒 Compra 100% segura</span>
+                <span>💳 Pix e cartão</span>
+                <span>🛡️ Garantia de 7 dias</span>
+                <span>⚡ Entrega imediata</span>
+              </div>
             </div>
           </div>
 
-          <div className="mt-8 border-2 border-dashed border-terra bg-creme p-7 text-left">
-            <h3 className="text-2xl">Garantia de 7 dias</h3>
+          <div className="mt-8 border-2 border-dashed border-verde bg-creme p-7 text-left">
+            <h3 className="text-2xl">Garantia de 7 dias incondicional</h3>
             <p className="mt-2 text-lg text-muted-foreground">
               Leia com calma. Se em 7 dias você achar que o livro não é para você, é só pedir o
               reembolso — devolvemos o valor integral, sem interrogatório.
             </p>
           </div>
+
         </div>
       </section>
 
